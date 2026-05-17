@@ -22,11 +22,4 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('apps.accounts.urls')),
-    path('api/patients/', include('apps.patients.urls')),
-    path('api/doctors/', include('apps.doctors.urls')),
-    path('api/polyclinic/', include('apps.polyclinic.urls')),
-    path('api/medicine/', include('apps.medicine.urls')),
-    path('api/medical-records/', include('apps.medical_records.urls')),
-    path('api/prescriptions/', include('apps.recipe.urls')),
-    path('api/reports/', include('apps.reports.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
