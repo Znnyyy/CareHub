@@ -4,11 +4,12 @@ from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import Medicine
 from .serializers import MedicineSerializer
+from apps.accounts.permissions import IsAdminOrReadOnly
 
 class MedicineViewSet(viewsets.ModelViewSet):
     queryset = Medicine.objects.all().order_by('name')
     serializer_class = MedicineSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnly]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filterset_fields = ['category', 'unit', 'is_active']
     search_fields = ['name', 'code', 'generic_name']

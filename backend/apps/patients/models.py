@@ -9,7 +9,7 @@ class Patient(models.Model):
     nik = models.CharField(max_length=16, unique=True)
     full_name = models.CharField(max_length=100)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
-    brith_date = models.DateField()
+    birth_date = models.DateField()
     blood_type = models.CharField(max_length=3, choices=BLOOD_CHOICES, blank=True, null=True)
     address = models.TextField()
     phone = models.CharField(max_length=15)
