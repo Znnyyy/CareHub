@@ -11,6 +11,9 @@ class PrescriptionDetailSerializer(serializers.ModelSerializer):
 
 class PrescriptionSerializer(serializers.ModelSerializer):
     details = PrescriptionDetailSerializer(many=True, read_only=True)
+    record_number = serializers.CharField(source='medical_record.record_number', read_only=True)
+    patient_name = serializers.CharField(source='medical_record.patient.full_name', read_only=True)
+    doctor_name = serializers.CharField(source='medical_record.doctor.full_name', read_only=True)
 
     class Meta:
         model = Prescription

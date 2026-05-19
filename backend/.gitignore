@@ -1,0 +1,7 @@
+# Mengabaikan database SQLite spesifik
+db.sqlite
+db.sqlite3
+
+# Mengabaikan semua file dengan ekstensi SQLite
+*.sqlite
+*.sqlite3
